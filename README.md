@@ -2,6 +2,12 @@
 
 A full-stack cryptocurrency dashboard application with personalized content, user authentication, and feedback system.
 
+## Live Application
+
+- **Frontend**: [https://moveo-project-xi.vercel.app](https://moveo-project-xi.vercel.app)
+- **Backend API**: [https://moveo-project-mpi3.onrender.com](https://moveo-project-mpi3.onrender.com)
+- **GitHub Repository**: [https://github.com/Idotzror4/moveo-project](https://github.com/Idotzror4/moveo-project)
+
 ## Features
 
 - User Authentication: Secure registration and login with JWT tokens
@@ -198,23 +204,24 @@ git push -u origin main
 
 #### Option A: Deploy to Render
 
-1. Go to Render Dashboard
+1. Go to [Render Dashboard](https://dashboard.render.com)
 2. Click "New +" → "Web Service"
-3. Connect your GitHub repository
+3. Connect your GitHub repository: `Idotzror4/moveo-project`
 4. Configure:
-   - Name: `moveo-backend`
+   - Name: `moveo-project`
+   - Language: `Docker`
    - Root Directory: `MoveoBackend`
-   - Build Command: `dotnet restore && dotnet publish -c Release -o ./publish`
-   - Start Command: `cd publish && dotnet MoveoBackend.dll`
+   - Dockerfile Path: `Dockerfile`
 5. Set Environment Variables:
    ```
    Jwt__Key=YourSuperSecretKeyThatShouldBeAtLeast32CharactersLong!
    Jwt__Issuer=MoveoBackend
    Jwt__Audience=MoveoBackend
    OpenRouter__ApiKey=your-openrouter-api-key (optional)
-   AllowedOrigins=https://your-frontend-url.vercel.app,https://your-frontend-url.netlify.app
+   AllowedOrigins=https://moveo-project-xi.vercel.app,http://localhost:3000
    ```
-6. Copy your backend URL
+6. The backend will automatically run database migrations on startup
+7. Copy your backend URL (e.g., `https://moveo-project-mpi3.onrender.com`)
 
 #### Option B: Deploy to Railway
 
@@ -235,9 +242,9 @@ git push -u origin main
 
 #### Option A: Deploy to Vercel
 
-1. Go to Vercel Dashboard
+1. Go to [Vercel Dashboard](https://vercel.com)
 2. Click "Add New..." → "Project"
-3. Import your GitHub repository
+3. Import your GitHub repository: `Idotzror4/moveo-project`
 4. Configure:
    - Framework Preset: Create React App
    - Root Directory: `frontend`
@@ -245,9 +252,9 @@ git push -u origin main
    - Output Directory: `build`
 5. Set Environment Variable:
    ```
-   REACT_APP_API_URL=https://your-backend-url.onrender.com
+   REACT_APP_API_URL=https://moveo-project-mpi3.onrender.com
    ```
-6. Deploy and copy your frontend URL
+6. Deploy and copy your frontend URL (e.g., `https://moveo-project-xi.vercel.app`)
 
 #### Option B: Deploy to Netlify
 
