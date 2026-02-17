@@ -9,17 +9,14 @@ import './App.css';
 function App() {
   const [currentView, setCurrentView] = useState('login');
   const [user, setUser] = useState(null);
-  const [hasPreferences, setHasPreferences] = useState(false);
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [loading, setLoading] = useState(true);
 
   const checkPreferences = async () => {
     try {
       await authService.getPreferences();
-      setHasPreferences(true);
       setShowOnboarding(false);
     } catch (err) {
-      setHasPreferences(false);
       setShowOnboarding(true);
     } finally {
       setLoading(false);
@@ -53,17 +50,14 @@ function App() {
       name: response.name
     });
     setShowOnboarding(true);
-    setHasPreferences(false);
   };
 
   const handleOnboardingComplete = () => {
     setShowOnboarding(false);
-    setHasPreferences(true);
   };
 
   const handleChangePreferences = () => {
     setShowOnboarding(true);
-    setHasPreferences(false);
   };
 
   const handleLogout = () => {
