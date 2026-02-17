@@ -1,0 +1,19 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "Jwt": {
+    "Key": "YourSuperSecretKeyThatShouldBeAtLeast32CharactersLong!",
+    "Issuer": "MoveoBackend",
+    "Audience": "MoveoBackend"
+  },
+  "OpenRouter": {
+    "ApiKey": ""
+  },
+  "AllowedOrigins": "https://your-frontend-url.vercel.app,https://your-frontend-url.netlify.app"
+}
+

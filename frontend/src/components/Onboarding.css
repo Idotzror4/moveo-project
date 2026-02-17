@@ -1,0 +1,100 @@
+.onboarding-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .onboarding-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .question-section {
+    margin-bottom: 30px;
+  }
+  
+  .question-section h3 {
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+  }
+  
+  .options-radio {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .option-checkbox,
+  .option-radio {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .option-checkbox:hover,
+  .option-radio:hover {
+    border-color: #007bff;
+    background-color: #f0f8ff;
+  }
+  
+  .option-checkbox input[type="checkbox"],
+  .option-radio input[type="radio"] {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .option-checkbox input[type="checkbox"]:checked + span,
+  .option-radio input[type="radio"]:checked + span {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .onboarding-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  .onboarding-container button:hover:not(:disabled) {
+    background-color: #218838;
+  }
+  
+  .onboarding-container button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .error {
+    color: red;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #ffe6e6;
+    border-radius: 4px;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 18px;
+  }
