@@ -54,6 +54,12 @@ namespace MoveoBackend.Controllers
             });
         }
 
+        [HttpGet("health")]
+        public ActionResult Health()
+        {
+            return Ok(new { status = "ok", message = "Backend is running" });
+        }
+
         [HttpPost("login")]
         public async Task<ActionResult<AuthResponseDto>> Login(LoginDto loginDto)
         {
