@@ -41,7 +41,9 @@ function Onboarding({ onComplete }) {
           }
         }
       } catch (err) {
-        console.log('No existing preferences found');
+        if (err.message !== 'NOT_FOUND' && err.response?.status !== 404) {
+          console.error('Error loading preferences:', err);
+        }
       } finally {
         setLoadingPreferences(false);
       }

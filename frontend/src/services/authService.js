@@ -41,15 +41,22 @@ export const authService = {
 
   getPreferences: async () => {
     const token = localStorage.getItem('token');
-    const response = await axios.get(
-      `${API_URL.replace('/auth', '/onboarding')}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`
+    try {
+      const response = await axios.get(
+        `${API_URL.replace('/auth', '/onboarding')}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
         }
+      );
+      return response.data;
+    } catch (err) {
+      if (err.response?.status === 404) {
+        throw new Error('NOT_FOUND');
       }
-    );
-    return response.data;
+      throw err;
+    }
   },
 
   getMarketNews: async () => {
